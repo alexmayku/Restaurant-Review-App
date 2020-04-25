@@ -8,6 +8,15 @@
 
 </div>
 
+<% if @review.ambience.present? %>
+
+	<div class="ambience">
+		Ambience: <%= @review.ambience %>
+	</div>
+
+<% end %>
+
+
 <div class="body">
 	<%= simple_format @review.body %>
 </div>

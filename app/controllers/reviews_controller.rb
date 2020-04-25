@@ -62,6 +62,7 @@ class ReviewsController < ApplicationController
 
 		# update it with the new info from the form
 		if @review.update(form_params)
+		redirect_to review_path(@review)
 
 		else
 			render "edit"
@@ -70,7 +71,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def form_params
-		params.require(:review).permit(:title, :body, :score, :restaurant)
+		params.require(:review).permit(:title, :restaurant, :body, :score, :ambience)
 	end
 
 
