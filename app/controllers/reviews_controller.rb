@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-	def index 
+	def index
 		#this is our list page for our reviews
 
 		@number = rand(100)
@@ -10,15 +10,15 @@ class ReviewsController < ApplicationController
 	end
 
 
-	def new 
+	def new
 		# the form for adding a new review
-		@review = Review.new 
+		@review = Review.new
 	end
 
   def create
     # take info from the form and add it to the model
     @review = Review.new(form_params)
-    
+
     # we want to check if the model can be saved
     # if it is, we're go the home page again
     # if it isn't, show the new form
@@ -50,7 +50,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def edit
-	
+
 		#find the individual review to edit
 		@review = Review.find(params[:id])
 
@@ -70,7 +70,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def form_params
-		params.require(:review).permit(:title, :body, :score)
+		params.require(:review).permit(:title, :body, :score, :restaurant)
 	end
 
 
