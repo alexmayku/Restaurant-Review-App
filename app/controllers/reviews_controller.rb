@@ -45,7 +45,7 @@ class ReviewsController < ApplicationController
     else
       # show the view for new.html.erb
       render "new"
-    end
+  end
 
 
 
