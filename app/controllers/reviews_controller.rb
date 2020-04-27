@@ -15,7 +15,6 @@ class ReviewsController < ApplicationController
 		end
 
 		#filter by Cuisine
-
 		if @cuisine.present?
 			@reviews = @reviews.where(cuisine: @cuisine)
 		end
